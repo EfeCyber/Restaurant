@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervasyon - Rüya Restorant</title>
+    <link rel="stylesheet" href="../CSS/layout.css">
+    <link rel="stylesheet" href="../CSS/reservation.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/Reservation.js"></script>
+</head>
+<body class="minimal-dark-theme">
+
+    
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">RUYA</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Ana Sayfa</a></li>
+                    <li><a href="../HTML/menu.html">Menü</a></li>
+                    <li><a href="../HTML/about.html">Hakkımızda</a></li>
+                    <li><a href="../HTML/contact.html">İletişim</a></li>
+                    <li><a href="../HTML/reservation.html">Rezervasyon</a></li>
+                </ul>
+            </nav>
+            <a href="login.html" class="btn-login">Giriş Yap</a>
+        </div>
+    </header>
+
+    <header class="reservation-hero-section text-center">
+        <div class="container">
+            <h1>Rezervasyon Yap</h1>
+            <p>Aşağıdaki formu doldurarak Rüya Restoran'da unutulmaz bir akşam yemeği için yerinizi hemen ayırtın.</p>
+        </div>
+    </header>
+
+    <section class="section-padded container reservation-form-section">
+
+        <div class="form-card">
+            <h2 class="card-title-accent">Rezervasyon Detayları</h2>
+
+            <form action="#" method="POST" class="reservation-form">
+
+                <div class="form-details-group">
+
+                    <div class="form-group">
+                        <label for="date">Tarih Seçin</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Saat Seçin</label>
+                        <select id="time" name="time" required disabled>
+                            <option value="">-- Önce Tarih Seç --</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Kişi Sayısı</label>
+                        <input type="number" id="guests" name="guests" required min="1" max="12" placeholder="1-12 Kişi">
+                    </div>
+
+                </div>
+
+                <button type="submit" class="cta-button btn-submit">Rezervasyonu Tamamla</button>
+
+            </form>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+     <div class="footer-container">
+       
+         <div class="footer-section footer-brand">
+             <h4 class="footer-logo">RUYA</h4> 
+             <p>İstanbul'un kalbinde, lezzetin adresi. Anadolu ve Dünya mutfağının eşsiz buluşması.</p>
+             <div class="social-icons">
+                
+                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                 <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+             </div>
+         </div>
+
+         <div class="footer-section footer-links">
+             <h4>Keşfet</h4>
+             <ul>
+                 <li><a href="../index.html">Ana Sayfa</a></li>
+                    <li><a href="../HTML/menu.html">Menü</a></li>
+                    <li><a href="../HTML/about.html">Hakkımızda</a></li>
+                    <li><a href="../HTML/contact.html">İletişim</a></li>
+                    <li><a href="../HTML/reservation.html">Rezervasyon</a></li>
+             </ul>
+         </div>
+
+         <div class="footer-section footer-privacy footer-links">
+
+             <h4>Politikalar</h4>
+             <ul>
+                 <li><a href="../HTML/privacy.html">Gizlilik Politikası</a></li>
+                 <li><a href="../HTML/terms.html">Kullanım Şartları</a></li>
+                 <li><a href="../HTML/cookies.html">Çerez Politikası</a></li>
+                 <li><a href="../HTML/dataSecurity.html">Veri Güvenliği</a></li>
+             </ul>
+         </div>
+
+         <div class="footer-section footer-contact">
+             <h4>Bize Ulaşın</h4>
+             <p><i class="fas fa-map-marker-alt"></i> Şık Cadde No: 42, İstanbul</p>
+             <p><i class="fas fa-phone"></i> (555) 123 45 67</p>
+             <p><i class="fas fa-envelope"></i> contact@ruyarestorant.com</p>
+         </div>    
+     </div>
+
+ </footer>
+
+
+</body>
+</html>

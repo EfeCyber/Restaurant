@@ -1,0 +1,154 @@
+
+.reservation-hero-section {
+    background-color: var(--color-medium-dark);
+    padding: 120px 0 90px;
+    border-bottom: none;
+}
+
+    .reservation-hero-section h1 {
+        text-align: center;
+        color: var(--color-accent-gold);
+        font-size: 4em; 
+        margin-bottom: 20px;
+    }
+
+    .reservation-hero-section p {
+        color: var(--color-text-subtle);
+        font-size: 1.4em;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+.reservation-form-section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: var(--color-dark);
+}
+
+.form-card {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 60px;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border-top: none;
+}
+
+.card-title-accent {
+    color: var(--color-accent-gold);
+    font-size: 2.4em; 
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: none;
+    text-align: center;
+}
+
+.form-details-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    margin-bottom: 70px;
+}
+
+.form-divider, .form-contact-group, .full-width {
+    display: none;
+}
+
+
+.form-group label {
+    display: block;
+    color: var(--color-text-light);
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.1em; 
+}
+
+.reservation-form input[type="date"],
+.reservation-form input[type="number"] {
+    width: 100%;
+    padding: 18px;
+    border: 1px solid #555;
+    background-color: var(--color-medium-dark);
+    color: var(--color-text-light); 
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.2em;
+}
+
+    .reservation-form input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(1); 
+        cursor: pointer;
+    }
+
+.reservation-form select {
+    width: 100%;
+    padding: 18px;
+    border: 1px solid #555;
+    background-color: var(--color-medium-dark);
+    color: var(--color-text-light, #f5f5f5); 
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 30px;
+}
+
+    .reservation-form select option {
+        color: black;
+        background-color: white; /* Tarayıcı varsayılanı */
+    }
+
+
+    .reservation-form input:focus,
+    .reservation-form select:focus {
+        border-color: var(--color-accent-red);
+        outline: none;
+    }
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--color-accent-red);
+    color: white;
+    font-size: 1.4em;
+    margin-top: 30px;
+    border-radius: 6px;
+}
+
+    .btn-submit:hover {
+        background-color: #c9302c;
+    }
+
+@media (max-width: 768px) {
+    .form-card {
+        padding: 40px 25px; 
+    }
+
+    .form-details-group {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .reservation-hero-section h1 {
+        font-size: 3em; 
+    }
+
+    .reservation-hero-section p {
+        font-size: 1.2em;
+    }
+
+    .form-group label {
+        font-size: 1em;
+    }
+
+    .reservation-form input[type="date"],
+    .reservation-form input[type="number"],
+    .reservation-form select {
+        padding: 14px;
+        font-size: 1.1em;
+    }
+}

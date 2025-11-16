@@ -1,0 +1,254 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.minimal-dark-theme {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #0d0d0d; 
+    color: #f5f5f5; 
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lora', serif; 
+    color: #e0a800; 
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: #f5f5f5;
+    transition: color 0.3s;
+}
+
+    a:hover {
+        color: #e0a800;
+    }
+
+ul {
+    list-style: none;
+}
+
+
+.site-header {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 2.2em;
+    font-weight: 700;
+    letter-spacing: 5px; 
+    color: #e0a800;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    align-items: center;
+}
+
+    .main-nav ul li a {
+        padding: 5px 0;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+
+.btn-reservation {
+    background-color: transparent;
+    border: 2px solid #e0a800;
+    color: #e0a800 !important;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-weight: 700;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+    .btn-reservation:hover {
+        background-color: #e0a800;
+        color: #1a1a1a !important;
+    }
+
+.btn-login {
+    background-color: transparent;
+    border: 2px solid #aaa; 
+    color: #aaa !important;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-weight: 700;
+    transition: all 0.3s;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+    .btn-login:hover {
+        background-color: #aaa;
+        color: #1a1a1a !important;
+    }
+
+
+.main-content-area {
+    min-height: 85vh;
+}
+
+.site-footer {
+    background-color: #1a1a1a;
+    padding: 60px 0 20px; 
+    font-size: 0.95em; 
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1 1 22%; 
+    min-width: 250px; 
+}
+
+    .footer-section h4 {
+        color: #e0a800;
+        margin-bottom: 25px; 
+        font-size: 1.2em; 
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+    }
+
+.footer-logo {
+    font-family: 'Lora', serif;
+    font-size: 1.8em !important;
+    letter-spacing: 3px;
+}
+
+.footer-section p {
+    margin-bottom: 15px; 
+    color: #aaa;
+    line-height: 1.7; 
+}
+
+.footer-contact p i {
+    margin-right: 10px;
+    color: #e0a800; 
+    width: 15px; 
+}
+
+.footer-links ul {
+    padding: 0; 
+}
+
+    .footer-links ul li a {
+        color: #aaa;
+        padding: 5px 0; 
+        display: inline-block; 
+        transition: transform 0.3s;
+    }
+
+        .footer-links ul li a:hover {
+            color: #e0a800;
+            transform: translateX(5px); 
+        }
+
+
+.social-icons {
+    margin-top: 20px; 
+}
+
+    .social-icons a {
+        display: inline-flex; 
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border: 1px solid #555; 
+        color: #aaa;
+        margin-right: 10px;
+        border-radius: 50%;
+        font-size: 1em; 
+        transition: all 0.3s;
+    }
+
+        .social-icons a:hover {
+            background-color: #e0a800;
+            color: #1a1a1a !important;
+            border-color: #e0a800;
+            transform: translateY(-3px);
+        }
+
+
+.copyright {
+    text-align: center;
+    padding: 15px 0;
+    
+    color: #555;
+    font-size: 0.8em;
+}
+
+
+@media (max-width: 992px) {
+    .main-nav, .btn-login {
+        display: none; 
+    }
+
+    .header-container {
+        justify-content: space-around;
+    }
+
+    
+    .footer-section {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        padding: 0 20px 30px;
+    }
+
+    .footer-section {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .footer-brand .social-icons {
+        justify-content: center;
+        display: flex;
+    }
+}
+
+
