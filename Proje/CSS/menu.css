@@ -9,7 +9,7 @@
 .menu-header {
     text-align: center;
     margin-bottom: 50px;
-    
+    font-size: 1.8rem;
 }
 
     .menu-header h1 {
@@ -18,7 +18,7 @@
     }
 
     .menu-header p {
-        color: #aaa;
+        color: #e0a800;
         margin-bottom: 30px;
         max-width: 800px;
         margin-left: auto;
@@ -44,7 +44,7 @@
 
         .menu-nav-tabs a:hover {
             color: #e0a800 !important;
-            border-bottom: 2px solid #e0a800;
+            
         }
 
 .menu-category {
@@ -120,3 +120,109 @@
         grid-template-columns: 1fr;
     }
 }
+
+
+ /* ===== Reveal Animations ===== */
+      .js-reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity .8s ease, transform .8s ease;
+        will-change: opacity, transform;
+      }
+      .js-reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+     /* ===== Red - Orange - Yellow Animated Title (FIXED) ===== */
+.animated-title{
+  display: inline-block; /* clip-text için daha stabil */
+  background-image: linear-gradient(
+    90deg,
+    #d60707ff,  /* koyu kırmızı (8 haneli hex yok!) */
+    #ff3b00,  /* kırmızı-turuncu */
+    #ff8a00,  /* turuncu */
+    #ffd500,  /* parlak sarı */
+    #ff8a00,  /* turuncu */
+    #ff3b00,  /* kırmızı-turuncu */
+    #d60707ff   /* tekrar kırmızı */
+  );
+  background-size: 600% 100%;
+  background-position: 0% 50%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* KRİTİK FIX */
+
+  animation: ruyaFireFlow 6.4s linear infinite; /* daha hızlı → daha belli */
+  letter-spacing: 1px;
+
+  text-shadow:
+    0 0 10px rgba(255, 120, 0, 0.45),
+    0 0 20px rgba(255, 210, 0, 0.25);
+}
+
+@keyframes ruyaFireFlow{
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Reduce-motion açıksa animasyon durur */
+@media (prefers-reduced-motion: reduce){
+  .animated-title{ animation: none; }
+}
+
+/* Kullanıcı reduced-motion istiyorsa animasyonu kapat */
+@media (prefers-reduced-motion: reduce) {
+  .animated-title { animation: none; }
+}
+
+
+      /* ===== Header Entrance ===== */
+      .menu-header h1, .menu-header p, .menu-nav-tabs {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity .9s ease, transform .9s ease;
+      }
+      .menu-header.is-visible h1 { opacity: 1; transform: translateY(0); }
+      .menu-header.is-visible p  { opacity: 1; transform: translateY(0); transition-delay: 120ms; }
+      .menu-header.is-visible .menu-nav-tabs { opacity: 1; transform: translateY(0); transition-delay: 220ms; }
+
+      /* ===== Navbar on scroll ===== */
+      .site-header.is-scrolled {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background: rgba(10, 10, 10, 0.55);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        transition: background .25s ease, border-color .25s ease;
+      }
+
+      /* ===== Active tab styling (soft underline) ===== */
+      .menu-nav-tabs a {
+        position: relative;
+        opacity: .85;
+        transition: opacity .2s ease;
+      }
+      .menu-nav-tabs a:hover { opacity: 1; }
+      .menu-nav-tabs a.is-active {
+        opacity: 1;
+      }
+      .menu-nav-tabs a.is-active::after {
+        content: "";
+        position: absolute;
+        left: 0; right: 0;
+        bottom: -8px;
+        height: 2px;
+        background: rgba(255,255,255,0.55);
+        border-radius: 999px;
+      }
+
+      /* ===== Optional: card hover micro-lift (pure CSS) ===== */
+      .menu-card {
+        transition: transform .25s ease, box-shadow .25s ease;
+      }
+      .menu-card:hover {
+        transform: translateY(-6px);
+      }

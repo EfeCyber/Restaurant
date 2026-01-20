@@ -301,6 +301,73 @@
 }
 
 
+ /* Navbar blur on scroll */
+      .site-header.is-scrolled {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background: rgba(10, 10, 10, 0.55);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        transition: background .25s ease, border-color .25s ease;
+      }
 
+      /* Animated title (red-orange-yellow) */
+      .animated-title{
+        display: inline-block;
+        background-image: linear-gradient(
+          90deg,
+          #d60707,
+          #ff3b00,
+          #ff8a00,
+          #ffd500,
+          #ff8a00,
+          #ff3b00,
+          #d60707
+        );
+        background-size: 600% 100%;
+        background-position: 0% 50%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        animation: ruyaFireFlow 5s linear infinite;
+        letter-spacing: 0.5px;
+        text-shadow:
+          0 0 10px rgba(255, 120, 0, 0.40),
+          0 0 22px rgba(255, 210, 0, 0.20);
+      }
+
+      @keyframes ruyaFireFlow{
+        0%   { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+      }
+
+      @media (prefers-reduced-motion: reduce){
+        .animated-title{ animation: none; }
+      }
+
+      /* Reveal */
+      .js-reveal{
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity .85s ease, transform .85s ease;
+        will-change: opacity, transform;
+      }
+      .js-reveal.is-visible{
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Hero entrance */
+      .hero-section .hero-animate{
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity .9s ease, transform .9s ease;
+      }
+      .hero-section.is-visible .hero-animate{
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .hero-section.is-visible .hero-animate.delay-1{ transition-delay: 120ms; }
+      .hero-section.is-visible .hero-animate.delay-2{ transition-delay: 220ms; }
 
 

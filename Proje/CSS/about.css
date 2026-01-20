@@ -162,7 +162,7 @@
 
     .final-cta .cta-button {
         border: 2px solid #d9534f;
-        color: #d9534f !important;
+        color: white !important;
         background-color: transparent;
     }
 
@@ -323,4 +323,54 @@
 }
 
 
+/* --- Base animation states --- */
+      .js-reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity .8s ease, transform .8s ease;
+        will-change: opacity, transform;
+      }
+      .js-reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
+      /* hero entrance */
+      .hero-animate {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity .9s ease, transform .9s ease;
+      }
+      .hero-animate.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* navbar scroll effect */
+      .site-header.is-scrolled {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background: rgba(10, 10, 10, 0.55);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        transition: background .25s ease, border-color .25s ease;
+      }
+
+      /* CTA button micro-interaction */
+      .final-cta .cta-button .arrow {
+        display: inline-block;
+        transform: translateX(0);
+        transition: transform .2s ease;
+      }
+      .final-cta .cta-button:hover .arrow {
+        transform: translateX(6px);
+      }
+
+      /* subtle image lift */
+      .final-cta .cta-image img {
+        transform: translateY(0);
+        transition: transform .35s ease, filter .35s ease;
+      }
+      .final-cta .cta-image img:hover {
+        transform: translateY(-6px);
+        filter: brightness(1.02);
+      }

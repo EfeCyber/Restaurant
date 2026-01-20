@@ -135,6 +135,7 @@
 
     .reservation-hero-section h1 {
         font-size: 3em; 
+        text-align: center;
     }
 
     .reservation-hero-section p {
@@ -152,3 +153,227 @@
         font-size: 1.1em;
     }
 }
+
+/* ===== Navbar on scroll ===== */
+      .site-header.is-scrolled {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background: rgba(10, 10, 10, 0.55);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        transition: background .25s ease, border-color .25s ease;
+      }
+
+      /* ===== Reveal Animations ===== */
+      .js-reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity .85s ease, transform .85s ease;
+        will-change: opacity, transform;
+      }
+      .js-reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ===== Red - Orange - Yellow Animated Title ===== */
+      .animated-title{
+        display: inline-block;
+        background-image: linear-gradient(
+          90deg,
+          #d60707,
+          #ff3b00,
+          #ff8a00,
+          #ffd500,
+          #ff8a00,
+          #ff3b00,
+          #d60707
+        );
+        background-size: 600% 100%;
+        background-position: 0% 50%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+
+        animation: ruyaFireFlow 5s linear infinite; /* yavaş-akıcı */
+        letter-spacing: 1px;
+
+        text-shadow:
+          0 0 10px rgba(255, 120, 0, 0.45),
+          0 0 20px rgba(255, 210, 0, 0.25);
+      }
+
+      @keyframes ruyaFireFlow{
+        0%   { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+      }
+
+      @media (prefers-reduced-motion: reduce){
+        .animated-title{ animation: none; }
+      }
+
+      /* ===== Form focus micro effect (bonus) ===== */
+      .reservation-form input:focus,
+      .reservation-form select:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255, 170, 0, 0.18);
+        transition: box-shadow .2s ease;
+      }
+
+      .reservation-hero-section .container {
+  text-align: center; /* garanti */
+}
+
+.reservation-hero-section h1.animated-title {
+  display: block;     /* inline-block yerine */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 6rem;
+}
+
+
+/* ===============================
+   TESTIMONIALS - RESERVATION PAGE
+================================ */
+
+.testimonials-section {
+    text-align: center;
+}
+
+.testimonials-title {
+    font-size: 3.6rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #d60707, #ff3b00, #ff8a00, #ffd500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+}
+
+.testimonials-subtitle {
+    color: #bbb;
+    margin-bottom: 3rem;
+    font-size: 1.3rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+    backdrop-filter: blur(6px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(255, 200, 0, 0.08), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.testimonial-card:hover::before {
+    opacity: 1;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.stars {
+    color: #ffd500;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.comment {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e5e5e5;
+    margin-bottom: 1.2rem;
+}
+
+.author {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Reveal animasyonu için */
+.testimonial-card {
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.testimonial-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* ===============================
+   TESTIMONIAL SLIDER
+================================ */
+
+.testimonial-slider {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 220px;
+}
+
+.testimonial-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+}
+
+.testimonial-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+}
+
+.stars {
+    color: #ffd500;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.comment {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: #eaeaea;
+    margin-bottom: 1.2rem;
+}
+
+.author {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+
